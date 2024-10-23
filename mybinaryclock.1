@@ -1,0 +1,63 @@
+.\" Manpage for myclock
+.TH MYCLOCK 1 "October 2024" "1.0" "My Clock Manual"
+.SH NAME
+myclock \- Display time in binary using Sense HAT
+.SH SYNOPSIS
+.B myclock
+[\fIoptions\fR]
+.SH DESCRIPTION
+.B myclock
+is a Python program that displays the current time in binary format on the Sense HAT LED matrix. It can also show temperature and humidity when specific joystick buttons are pressed. The display can be rotated according to user preference.
+
+.SH OPTIONS
+.TP
+.B \-r, \--rotate \fIDEGREE\fR
+Set display rotation (0, 90, 180, 270 degrees). Default is 0 degrees.
+
+.SH JOYSTICK CONTROLS
+The joystick can be used to interact with the display:
+.TP
+.B UP
+Rotate display to 0 degrees.
+.TP
+.B DOWN
+Rotate display to 90 degrees.
+.TP
+.B LEFT
+Rotate display to 180 degrees.
+.TP
+.B RIGHT
+Rotate display to 270 degrees.
+.TP
+.B MIDDLE
+Toggle between showing the clock and displaying special information (temperature, humidity, or a Danish flag).
+
+.SH DISPLAYED INFORMATION
+When in clock mode, the following binary representations are shown:
+- Year (last two digits)
+- Month
+- Day
+- Hour
+- Minute
+- Second
+- Hundredths of a second
+
+When in special display mode:
+- Temperature is shown in degrees Celsius.
+- Humidity is shown as a percentage.
+- The Danish flag is displayed.
+
+.SH EXAMPLES
+.TP
+.B myclock -r 90
+Run myclock with the display rotated 90 degrees.
+
+.TP
+.B myclock
+Run myclock with default settings.
+
+.SH AUTHOR
+Your Name <your.email@example.com>
+
+.SH SEE ALSO
+python(1), sense_hat(1)
